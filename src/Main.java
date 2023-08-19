@@ -1,5 +1,33 @@
+import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("Вы хотите самостоятельно выбрать сладости для подарка из ассортимента или " +
+                "система автоматически подберет сладости для вашего подарка? Введите соответствующее: самостоятельно " +
+                "или автоматически");
+
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+
+        if (answer.equals("самостоятельно")){
+            userСonfectionChoise();
+        }
+        else if (answer.equals("автоматически")){
+            systemСonfectionChoise();
+        }
+
+    }
+
+    public static void userСonfectionChoise(){
+        System.out.println("Пока тут ничего нет, но скоро будет :)");
+    }
+
+    public static void systemСonfectionChoise(){
 
         // Массивы хранят ассортимент и граммовки для динамичесвого формирования объектов. Соответствие 1 к 1.
         String[] sweetsAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
@@ -79,5 +107,26 @@ public class Main {
         Cookie cookieType2 = new Cookie(cookieAssortment[positionInСookieAssortment2],
                 cookieAssortmentWeight[positionInСookieAssortment2]);
 
+        System.out.println("Для вашего подарка были выбраны: ");
+        System.out.println(sweetType1.sweetName);
+        System.out.println(sweetType2.sweetName);
+        System.out.println(marmaladeType1.marmaladeName);
+        System.out.println(marmaladeType2.marmaladeName);
+        System.out.println(chocolateType1.chocolateName);
+        System.out.println(chocolateType2.chocolateName);
+        System.out.println(cookieType1.cookieName);
+        System.out.println(cookieType2.cookieName);
+        System.out.println("Вы довольны подбором продукции? Если, да, то введите \"Да\" и мы приступим к " +
+                "формированию подарка. Если нет, то введите \"Нет\" и система изменит выбор");
+
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+
+        if (answer.equals("Да")){
+            System.out.println("Скоро будет :)");
+        }
+        else if (answer.equals("Нет")){
+            systemСonfectionChoise();
+        }
     }
 }
