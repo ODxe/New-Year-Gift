@@ -29,40 +29,40 @@ public class Main {
         System.out.println("Вы выбрали опцию самостоятельного выбора продуктов для вашего подарка из нашего ассортимента." +
                 " \n Важно! Вы можете выбрать по 2 варианта для каждого из вида сладости");
 
-        String[] sweetsAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
+        String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
-        int[] sweetsAssortmentWeight = new int[] {11, 15, 5, 14, 13};
+        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13};
 
         System.out.println("Выберите, пожалуйста, конфеты, которые вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
 
-        for (String sweetsAssortmentElement: sweetsAssortment) {
-            System.out.println(sweetsAssortmentElement);
+        for (String candiesAssortmentElement: candiesAssortment) {
+            System.out.println(candiesAssortmentElement);
         }
 
-        System.out.println("Введите номера двух выбранных вами видов конфет (от 1 до " + sweetsAssortment.length +
+        System.out.println("Введите номера двух выбранных вами видов конфет (от 1 до " + candiesAssortment.length +
                 ") \n" +
                 "Нельзя ввести 2 одинаковых товара из ассортимента");
 
         Scanner scanner = new Scanner(System.in);
-        String positionInSweetsAssortment1Scanned = scanner.nextLine();
-        String positionInSweetsAssortment2Scanned = scanner.nextLine();
+        String positionInCandiesAssortment1Scanned = scanner.nextLine();
+        String positionInCandiesAssortment2Scanned = scanner.nextLine();
 
-        while (positionInSweetsAssortment1Scanned.equals(positionInSweetsAssortment2Scanned)){
+        while (positionInCandiesAssortment1Scanned.equals(positionInCandiesAssortment2Scanned)){
             System.out.println("Вы выбрали 2 одинаковых вида конфет. Пожалуйста выполните ввод снова.");
 
-            positionInSweetsAssortment1Scanned = scanner.nextLine();
-            positionInSweetsAssortment2Scanned = scanner.nextLine();
+            positionInCandiesAssortment1Scanned = scanner.nextLine();
+            positionInCandiesAssortment2Scanned = scanner.nextLine();
         }
 
-        int positionInSweetsAssortment1 = Integer.parseInt(positionInSweetsAssortment1Scanned) - 1;
-        int positionInSweetsAssortment2 = Integer.parseInt(positionInSweetsAssortment2Scanned) - 1;
+        int positionInCandiesAssortment1 = Integer.parseInt(positionInCandiesAssortment1Scanned) - 1;
+        int positionInCandiesAssortment2 = Integer.parseInt(positionInCandiesAssortment2Scanned) - 1;
 
         // Формируем объекты - конфеты в зависимости от того, что выбрал пользователь
-        Sweets sweetType1 = new Sweets(sweetsAssortment[positionInSweetsAssortment1],
-                    sweetsAssortmentWeight[positionInSweetsAssortment1]);
-        Sweets sweetType2 = new Sweets(sweetsAssortment[positionInSweetsAssortment2],
-                    sweetsAssortmentWeight[positionInSweetsAssortment2]);
+        Candy candyType1 = new Candy(candiesAssortment[positionInCandiesAssortment1],
+                candiesAssortmentWeight[positionInCandiesAssortment1]);
+        Candy candyType2 = new Candy(candiesAssortment[positionInCandiesAssortment2],
+                candiesAssortmentWeight[positionInCandiesAssortment2]);
 
         // Ассортимент мармелада
         String[] marmaladeAssortment = new String[] {"Мармедад \"Кислые червячки\"", "Мармелад \"Веселые мишки\"",
@@ -76,7 +76,7 @@ public class Main {
             System.out.println(marmaladeAssortmentElement);
         }
 
-        System.out.println("Введите номера двух выбранных вами видов мармелада (от 1 до " + sweetsAssortment.length +
+        System.out.println("Введите номера двух выбранных вами видов мармелада (от 1 до " + marmaladeAssortment.length +
                 ") \n" +
                 "Нельзя ввести 2 одинаковых товара из ассортимента");
 
@@ -112,7 +112,7 @@ public class Main {
             System.out.println(chocolateAssortmentElement);
         }
 
-        System.out.println("Введите номера двух выбранных вами видов шоколада (от 1 до " + sweetsAssortment.length +
+        System.out.println("Введите номера двух выбранных вами видов шоколада (от 1 до " + chocolateAssortment.length +
                 ") \n" +
                 "Нельзя ввести 2 одинаковых товара из ассортимента");
 
@@ -149,7 +149,7 @@ public class Main {
             System.out.println(cookieAssortmentElement);
         }
 
-        System.out.println("Введите номера двух выбранных вами видов печенья (от 1 до " + sweetsAssortment.length +
+        System.out.println("Введите номера двух выбранных вами видов печенья (от 1 до " + cookieAssortment.length +
                 ") \n" +
                 "Нельзя ввести 2 одинаковых товара из ассортимента");
 
@@ -173,8 +173,8 @@ public class Main {
                 cookieAssortmentWeight[positionInСookieAssortment2]);
 
         System.out.println("Для вашего подарка вы выбрали: ");
-        System.out.println(sweetType1.sweetName);
-        System.out.println(sweetType2.sweetName);
+        System.out.println(candyType1.candyName);
+        System.out.println(candyType2.candyName);
         System.out.println(marmaladeType1.marmaladeName);
         System.out.println(marmaladeType2.marmaladeName);
         System.out.println(chocolateType1.chocolateName);
@@ -198,22 +198,22 @@ public class Main {
     public static void systemСonfectionChoise(){
 
         // Массивы хранят ассортимент и граммовки для динамичесвого формирования объектов. Соответствие 1 к 1.
-        String[] sweetsAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
+        String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
-        int[] sweetsAssortmentWeight = new int[] {11, 15, 5, 14, 13}; //вес одной конфеты в граммах
+        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13};
 
-        int positionInSweetsAssortment1 = (int) (Math.random()*4);
-        int positionInSweetsAssortment2 = (int) (Math.random()*4);
+        int positionInCandiesAssortment1 = (int) (Math.random()*4);
+        int positionInCandiesAssortment2 = (int) (Math.random()*4);
 
-        while (positionInSweetsAssortment1 == positionInSweetsAssortment2){
-            positionInSweetsAssortment2 = (int) (Math.random()*4);
+        while (positionInCandiesAssortment1 == positionInCandiesAssortment2){
+            positionInCandiesAssortment2 = (int) (Math.random()*4);
         }
 
         // Формируем объекты - конфеты
-        Sweets sweetType1 = new Sweets(sweetsAssortment[positionInSweetsAssortment1],
-                sweetsAssortmentWeight[positionInSweetsAssortment1]);
-        Sweets sweetType2 = new Sweets(sweetsAssortment[positionInSweetsAssortment2],
-                sweetsAssortmentWeight[positionInSweetsAssortment2]);
+        Candy candyType1 = new Candy(candiesAssortment[positionInCandiesAssortment1],
+                candiesAssortmentWeight[positionInCandiesAssortment1]);
+        Candy candyType2 = new Candy(candiesAssortment[positionInCandiesAssortment2],
+                candiesAssortmentWeight[positionInCandiesAssortment2]);
 
         // Ассортимент мармелада
         String[] marmaladeAssortment = new String[] {"Мармедад \"Кислые червячки\"", "Мармелад \"Веселые мишки\"",
@@ -276,8 +276,8 @@ public class Main {
                 cookieAssortmentWeight[positionInСookieAssortment2]);
 
         System.out.println("Для вашего подарка были выбраны: ");
-        System.out.println(sweetType1.sweetName);
-        System.out.println(sweetType2.sweetName);
+        System.out.println(candyType1.candyName);
+        System.out.println(candyType2.candyName);
         System.out.println(marmaladeType1.marmaladeName);
         System.out.println(marmaladeType2.marmaladeName);
         System.out.println(chocolateType1.chocolateName);
