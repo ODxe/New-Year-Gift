@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class UserSweetsChoise {
 
     // Метод для самостоятельного выбора сладостей пользователем
-    public static void userChoise(){
+    public static void UserChoise(){
 
         System.out.println("Вы выбрали опцию самостоятельного выбора продуктов для вашего подарка из нашего ассортимента." +
                 " \n Важно! Вы можете выбрать по 2 варианта для каждого из вида сладости");
 
         String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
-        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13};
+        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13}; // вес одной конфеты в граммах
 
         System.out.println("Выберите, пожалуйста, конфеты, которые вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -119,7 +119,7 @@ public class UserSweetsChoise {
                 "Печенье \"Аленка\" шоколадное с ореховой начинкой",
                 "Понч с вишневой начинкой \"Bite&Go\"", "Печенье \"Milka Sticks\" с шоколадной начинкой",
                 "Печенье \"Milka Sensations\" с шоколадной крошкой"};
-        int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312};
+        int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312}; // вес одного печенья в граммах
 
         System.out.println("Выберите, пожалуйста, печенье, который вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -166,10 +166,14 @@ public class UserSweetsChoise {
         String answer = scanner.nextLine();
 
         if (answer.equals("Да")){
-            System.out.println("Скоро будет :)");
+
+            NewYearGift startGiftCreating = new NewYearGift();
+
+            startGiftCreating.CreateNewYearGift(candyType1, candyType2, marmaladeType1, marmaladeType2, chocolateType1,
+                    chocolateType2, cookieType1, cookieType2);
         }
         else if (answer.equals("Нет")){
-            userChoise();
+            UserChoise();
         }
     }
 }

@@ -16,11 +16,11 @@ public class Main {
 
         if (answer.equals("самостоятельно")){
             UserSweetsChoise chooseSweetsManually = new UserSweetsChoise();
-            chooseSweetsManually.userChoise();
+            chooseSweetsManually.UserChoise();
         }
         else if (answer.equals("автоматически")){
             SystemSweetsChoise chooseSweetsAutomatically = new SystemSweetsChoise();
-            chooseSweetsAutomatically.systemChoise();
+            chooseSweetsAutomatically.SystemChoise();
         }
 
     }

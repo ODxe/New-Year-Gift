@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class SystemSweetsChoise {
 
     // Метод для автоматического подпора сладостей для подарка
-    public static void systemChoise(){
+    public static void SystemChoise(){
 
         // Массивы хранят ассортимент и граммовки для динамичесвого формирования объектов. Соответствие 1 к 1.
         String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
-        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13};
+        int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13}; //вес одной конфеты в граммах
 
         int positionInCandiesAssortment1 = (int) (Math.random()*4);
         int positionInCandiesAssortment2 = (int) (Math.random()*4);
@@ -40,9 +40,6 @@ public class SystemSweetsChoise {
                 marmaladeAssortmentWeight[positionInMarmaladeAssortment1]);
         Marmalade marmaladeType2 = new Marmalade(marmaladeAssortment[positionInMarmaladeAssortment2],
                 marmaladeAssortmentWeight[positionInMarmaladeAssortment2]);
-        /*
-        System.out.println(marmaladeType1.marmaladeName + " " + marmaladeType1.marmaladeWeight);
-        System.out.println(marmaladeType2.marmaladeName + " " + marmaladeType2.marmaladeWeight);*/
 
         // Ассортимент шоколада
         String[] chocolateAssortment = new String[] {"Шоколад \"Молочный\"", "Шоколад \"Воздушный белый\"",
@@ -68,7 +65,7 @@ public class SystemSweetsChoise {
                 "Печенье \"Аленка\" шоколадное с ореховой начинкой",
                 "Понч с вишневой начинкой \"Bite&Go\"", "Печенье \"Milka Sticks\" с шоколадной начинкой",
                 "Печенье \"Milka Sensations\" с шоколадной крошкой"};
-        int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312};
+        int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312}; // вес одного печенья в граммах
 
         int positionInСookieAssortment1 = (int) (Math.random()*4);
         int positionInСookieAssortment2 = (int) (Math.random()*4);
@@ -99,10 +96,14 @@ public class SystemSweetsChoise {
         String answer = scanner.nextLine();
 
         if (answer.equals("Да")){
-            System.out.println("Скоро будет :)");
+
+            NewYearGift startGiftCreating = new NewYearGift();
+
+            startGiftCreating.CreateNewYearGift(candyType1, candyType2, marmaladeType1, marmaladeType2, chocolateType1,
+                    chocolateType2, cookieType1, cookieType2);
         }
         else if (answer.equals("Нет")){
-            systemChoise();
+            SystemChoise();
         }
     }
 }
