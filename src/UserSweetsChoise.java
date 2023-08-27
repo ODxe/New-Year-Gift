@@ -142,8 +142,8 @@ public class UserSweetsChoise {
             positionInCookieAssortment2Scanned = scanner.nextLine();
         }
 
-        int positionInСookieAssortment1 = Integer.parseInt(positionInChocolateAssortment1Scanned) - 1;
-        int positionInСookieAssortment2 = Integer.parseInt(positionInChocolateAssortment2Scanned) - 1;
+        int positionInСookieAssortment1 = Integer.parseInt(positionInChocolateAssortment1Scanned);
+        int positionInСookieAssortment2 = Integer.parseInt(positionInChocolateAssortment2Scanned);
 
         // Формируем объекты - печенья
         Cookie cookieType1 = new Cookie(cookieAssortment[positionInСookieAssortment1],

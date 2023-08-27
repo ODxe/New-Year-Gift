@@ -86,6 +86,72 @@ public class NewYearGift {
         cookieSecondTypeQuantity = cookieAmount2;
     }
 
+    // метод для вывода инфорации о подарке
+    private void GiftInfo(NewYearGift gift){
+
+        System.out.println("----------------------------------------------------");
+        System.out.println("Состав подарка: \n");
+
+        if (gift.candyFirstTypeQuantity > 0){
+            System.out.println(gift.candyFirstTypeName + " " + gift.candyFirstTypeQuantity + " шт. " +
+                    gift.candyFirstTypeQuantity * gift.candyFirstTypeWeightInGrams + " грамм (вес одной конфеты " +
+                    gift.candyFirstTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.candySecondTypeQuantity > 0){
+            System.out.println(gift.candySecondTypeName + " " + gift.candySecondTypeQuantity + " шт. " +
+                    gift.candySecondTypeQuantity * gift.candySecondTypeWeightInGrams + " грамм (вес одной конфеты " +
+                    gift.candySecondTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.marmaladeFirstTypeQuantity > 0){
+            System.out.println(gift.marmaladeFirstTypeName + " " + gift.marmaladeFirstTypeQuantity + " шт. " +
+                    gift.marmaladeFirstTypeQuantity * gift.marmaladeFirstTypeWeightInGrams + " грамм (вес одной " +
+                    "мармеладки " + gift.marmaladeFirstTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.marmaladeSecondTypeQuantity > 0){
+            System.out.println(gift.marmaladeSecondTypeName + " " + gift.marmaladeSecondTypeQuantity + " шт. " +
+                    gift.marmaladeSecondTypeQuantity * gift.marmaladeSecondTypeWeightInGrams + " грамм (вес одной " +
+                    "мармеладки " + gift.marmaladeSecondTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.chocolateFirstTypeQuantity > 0){
+            System.out.println(gift.chocolateFirstTypeName + " " + gift.chocolateFirstTypeQuantity + " шт. " +
+                    gift.chocolateFirstTypeQuantity * gift.chocolateFirstTypeWeightInGrams + " грамм (вес одной " +
+                    "шоколадки " + gift.chocolateFirstTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.chocolateSecondTypeQuantity > 0){
+            System.out.println(gift.chocolateSecondTypeName + " " + gift.chocolateSecondTypeQuantity + " шт. " +
+                    gift.chocolateSecondTypeQuantity * gift.chocolateSecondTypeWeightInGrams + " грамм (вес одной " +
+                    "шоколадки " + gift.chocolateSecondTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.cookieFirstTypeQuantity > 0){
+            System.out.println(gift.cookieFirstTypeName + " " + gift.cookieFirstTypeQuantity + " шт. " +
+                    gift.cookieFirstTypeQuantity * gift.cookieFirstTypeWeightInGrams + " грамм (вес одного " +
+                    "печенья " + gift.cookieFirstTypeWeightInGrams + " грамм)");
+        }
+
+        if (gift.cookieSecondTypeQuantity > 0){
+            System.out.println(gift.cookieSecondTypeName + " " + gift.cookieSecondTypeQuantity + " шт. " +
+                    gift.cookieSecondTypeQuantity * gift.cookieSecondTypeWeightInGrams + " грамм (вес одного " +
+                    "печенья " + gift.cookieSecondTypeWeightInGrams + " грамм)");
+        }
+
+        int giftTotalWeight = gift.candyFirstTypeQuantity * gift.candyFirstTypeWeightInGrams +
+                gift.candySecondTypeQuantity * gift.candySecondTypeWeightInGrams +
+                gift.marmaladeFirstTypeQuantity * gift.marmaladeFirstTypeWeightInGrams +
+                gift.marmaladeSecondTypeQuantity * gift.marmaladeSecondTypeWeightInGrams +
+                gift.chocolateFirstTypeQuantity * gift.chocolateFirstTypeWeightInGrams +
+                gift.chocolateSecondTypeQuantity * gift.chocolateSecondTypeWeightInGrams +
+                gift.cookieFirstTypeQuantity * gift.cookieFirstTypeWeightInGrams +
+                gift.cookieSecondTypeQuantity * gift.cookieSecondTypeWeightInGrams;
+
+        System.out.println("\n Общий вес подарка: " + giftTotalWeight + " грамм");
+    }
+
     // Взаимодействие с пользователем при создании подарка
     public void CreateNewYearGift(Candy candyFirstType, Candy candySecondType, Marmalade marmaladeFirstType,
                                          Marmalade marmaladeSecondType, Chocolate chocolateFirstType,
@@ -144,6 +210,7 @@ public class NewYearGift {
                 cookieFirstType.cookieName, cookieFirstType.cookieWeight, cookieType1Amount,
                 cookieSecondType.cookieName, cookieSecondType.cookieWeight, cookieType2Amount);
 
-
+        // Выводим информацию о собранном подарке
+        gift.GiftInfo(gift);
     }
 }
