@@ -11,6 +11,8 @@ public class UserSweetsChoise {
         String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
         int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13}; // вес одной конфеты в граммах
+        int [] candiesAssortmentSugarQuantity = new int[] {10, 6, 12, 8, 10}; // количество сахара в граммах
+                                                                              // в одной конфете
 
         System.out.println("Выберите, пожалуйста, конфеты, которые вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -39,14 +41,18 @@ public class UserSweetsChoise {
 
         // Формируем объекты - конфеты в зависимости от того, что выбрал пользователь
         Candy candyType1 = new Candy(candiesAssortment[positionInCandiesAssortment1],
-                candiesAssortmentWeight[positionInCandiesAssortment1]);
+                candiesAssortmentWeight[positionInCandiesAssortment1],
+                candiesAssortmentSugarQuantity[positionInCandiesAssortment1]);
         Candy candyType2 = new Candy(candiesAssortment[positionInCandiesAssortment2],
-                candiesAssortmentWeight[positionInCandiesAssortment2]);
+                candiesAssortmentWeight[positionInCandiesAssortment2],
+                candiesAssortmentSugarQuantity[positionInCandiesAssortment2]);
 
         // Ассортимент мармелада
         String[] marmaladeAssortment = new String[] {"Мармедад \"Кислые червячки\"", "Мармелад \"Веселые мишки\"",
                 "Мармелад \"Клубника 3D\"", "Мармелад \"Бабл Гам\"", "Мармелад \"Яркие паучки\""};
         int[] marmaladeAssortmentWeight = new int[] {3, 1, 2, 3, 1}; //вес одной мармеладки в граммах
+        int [] marmaladeAssortmentSugarQuantity = new int[] {75, 55, 100, 23, 40}; // количество сахара в граммах
+                                                                                   // в одной мармеладке
 
         System.out.println("Выберите, пожалуйста, мармелад, который вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -74,15 +80,20 @@ public class UserSweetsChoise {
 
         // Формируем объекты - мармеладки в зависимости от того, что выбрал пользователь
         Marmalade marmaladeType1 = new Marmalade(marmaladeAssortment[positionInMarmaladeAssortment1],
-                marmaladeAssortmentWeight[positionInMarmaladeAssortment1]);
+                marmaladeAssortmentWeight[positionInMarmaladeAssortment1],
+                marmaladeAssortmentSugarQuantity[positionInMarmaladeAssortment1]);
         Marmalade marmaladeType2 = new Marmalade(marmaladeAssortment[positionInMarmaladeAssortment2],
-                marmaladeAssortmentWeight[positionInMarmaladeAssortment2]);
+                marmaladeAssortmentWeight[positionInMarmaladeAssortment2],
+                marmaladeAssortmentSugarQuantity[positionInMarmaladeAssortment2]);
 
         // Ассортимент шоколада
         String[] chocolateAssortment = new String[] {"Шоколад \"Молочный\"", "Шоколад \"Воздушный белый\"",
                 "Молочный шоколад с карамельной начинкой \"Milka\"", "Молочный шоколад с лесными орехами \"Alpen Gold\"",
                 "Молочный шоколад с печеньем \"Alpen Gold\""};
         int[] chocolateAssortmentWeight = new int[] {100, 85, 110, 120, 100}; //вес одной шоколадки в граммах
+        int [] chocolateAssortmentSugarQuantity = new int[] {600, 200, 150, 300, 244}; // количество сахара в граммах
+        // в одной шоколадке
+
 
         System.out.println("Выберите, пожалуйста, шоколад, который вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -110,9 +121,11 @@ public class UserSweetsChoise {
 
         // Формируем объекты - шоколадки в зависимости от того, что выбрал пользователь
         Chocolate chocolateType1 = new Chocolate(chocolateAssortment[positionInChocolateAssortment1],
-                chocolateAssortmentWeight[positionInChocolateAssortment1]);
+                chocolateAssortmentWeight[positionInChocolateAssortment1],
+                chocolateAssortmentSugarQuantity[positionInChocolateAssortment1]);
         Chocolate chocolateType2 = new Chocolate(chocolateAssortment[positionInChocolateAssortment2],
-                chocolateAssortmentWeight[positionInChocolateAssortment2]);
+                chocolateAssortmentWeight[positionInChocolateAssortment2],
+                chocolateAssortmentSugarQuantity[positionInChocolateAssortment2]);
 
         // Ассортимент печенья
         String[] cookieAssortment = new String[] {"Печенье \"Аленка\" с клюквой и шоколадом",
@@ -120,6 +133,8 @@ public class UserSweetsChoise {
                 "Понч с вишневой начинкой \"Bite&Go\"", "Печенье \"Milka Sticks\" с шоколадной начинкой",
                 "Печенье \"Milka Sensations\" с шоколадной крошкой"};
         int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312}; // вес одного печенья в граммах
+        int [] cookieAssortmentSugarQuantity = new int[] {110, 78, 82, 91, 112}; // количество сахара в граммах
+                                                                                 // в одном печенье
 
         System.out.println("Выберите, пожалуйста, печенье, который вы хотите добавить в подарок");
         System.out.println("Наш ассортимент: ");
@@ -142,14 +157,16 @@ public class UserSweetsChoise {
             positionInCookieAssortment2Scanned = scanner.nextLine();
         }
 
-        int positionInСookieAssortment1 = Integer.parseInt(positionInChocolateAssortment1Scanned);
-        int positionInСookieAssortment2 = Integer.parseInt(positionInChocolateAssortment2Scanned);
+        int positionInСookieAssortment1 = Integer.parseInt(positionInCookieAssortment1Scanned) - 1;
+        int positionInСookieAssortment2 = Integer.parseInt(positionInCookieAssortment2Scanned) - 1;
 
         // Формируем объекты - печенья
         Cookie cookieType1 = new Cookie(cookieAssortment[positionInСookieAssortment1],
-                cookieAssortmentWeight[positionInСookieAssortment1]);
+                cookieAssortmentWeight[positionInСookieAssortment1],
+                cookieAssortmentSugarQuantity[positionInСookieAssortment1]);
         Cookie cookieType2 = new Cookie(cookieAssortment[positionInСookieAssortment2],
-                cookieAssortmentWeight[positionInСookieAssortment2]);
+                cookieAssortmentWeight[positionInСookieAssortment2],
+                cookieAssortmentSugarQuantity[positionInСookieAssortment2]);
 
         System.out.println("Для вашего подарка вы выбрали: ");
         System.out.println(candyType1.candyName);
