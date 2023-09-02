@@ -152,6 +152,70 @@ public class NewYearGift {
         System.out.println("\n Общий вес подарка: " + giftTotalWeight + " грамм");
     }
 
+    // метод для вывода названия сладостей по введенному диапазону сахара
+    private void GiftSugarQuantityInfo(int candy1SugarAmount, int candy2SugarAmount,
+                                       int marmalade1SugarAmount, int marmalade2SugarAmount,
+                                       int chocolate1SugarAmount, int chocolate2SugarAmount,
+                                       int cookie1SugarAmount, int cookie2SugarAmount
+                                       ){
+        System.out.println("Хотите ли вы посмотреть содержание количества сахара в выбранных вами сладостях?" +
+                " Введите \"Да\" или \"Нет\"");
+
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+        if (answer.equals("Да")){
+
+            System.out.println("Введите диапазон содержания сахара (в граммах) для сладостей, которые вы " +
+                    "хотите отобразить:");
+
+            answer = scanner.nextLine();
+            int leftLimit = Integer.parseInt(answer);
+
+            answer = scanner.nextLine();
+            int rightLimit = Integer.parseInt(answer);
+
+            if ((candy1SugarAmount >= leftLimit) && (candy1SugarAmount <= rightLimit) && (candyFirstTypeQuantity > 0)){
+                System.out.println(candyFirstTypeName + " " + candy1SugarAmount + " грамм сахара (в одной конфете)");
+            }
+            if ((candy2SugarAmount >= leftLimit) && (candy2SugarAmount <= rightLimit) && (candySecondTypeQuantity > 0)){
+                System.out.println(candySecondTypeName + " " + candy2SugarAmount + " грамм сахара (в одной конфете)");
+            }
+            if ((marmalade1SugarAmount >= leftLimit) && (marmalade1SugarAmount <= rightLimit) &&
+                    (marmaladeFirstTypeQuantity > 0)){
+                System.out.println(marmaladeFirstTypeName + " " + marmalade1SugarAmount +
+                        " грамм сахара (в одной мармеладке)");
+            }
+            if ((marmalade2SugarAmount >= leftLimit) && (marmalade2SugarAmount <= rightLimit) &&
+                    (marmaladeSecondTypeQuantity > 0)){
+                System.out.println(marmaladeSecondTypeName + " " + marmalade2SugarAmount +
+                        " грамм сахара (в одной мармеладке)");
+            }
+            if ((chocolate1SugarAmount >= leftLimit) && (chocolate1SugarAmount <= rightLimit) &&
+                    (chocolateFirstTypeQuantity > 0)){
+                System.out.println(chocolateFirstTypeName + " " + chocolate1SugarAmount +
+                        " грамм сахара (в одной шоколадке)");
+            }
+            if ((chocolate2SugarAmount >= leftLimit) && (chocolate2SugarAmount <= rightLimit) &&
+                    (chocolateSecondTypeQuantity > 0)){
+                System.out.println(chocolateSecondTypeName + " " + chocolate2SugarAmount +
+                        " грамм сахара (в одной шоколадке)");
+            }
+            if ((cookie1SugarAmount >= leftLimit) && (cookie1SugarAmount <= rightLimit) &&
+                    (cookieFirstTypeQuantity > 0)){
+                System.out.println(cookieFirstTypeName + " " + cookie1SugarAmount +
+                        " грамм сахара (в одном печенье)");
+            }
+            if ((cookie2SugarAmount >= leftLimit) && (cookie2SugarAmount <= rightLimit) &&
+                    (cookieSecondTypeQuantity > 0)){
+                System.out.println(cookieSecondTypeName + " " + cookie2SugarAmount +
+                        " грамм сахара (в одном печенье)");
+            }
+        }
+        else if (answer.equals("Нет")){
+            return;
+        }
+    }
+
     // Взаимодействие с пользователем при создании подарка
     public void CreateNewYearGift(Candy candyFirstType, Candy candySecondType, Marmalade marmaladeFirstType,
                                          Marmalade marmaladeSecondType, Chocolate chocolateFirstType,
@@ -212,5 +276,12 @@ public class NewYearGift {
 
         // Выводим информацию о собранном подарке
         gift.GiftInfo(gift);
+
+        // Метод по выводу количества сахара из заданного диапазона
+        gift.GiftSugarQuantityInfo(candyFirstType.sugarQuantityInCandy, candySecondType.sugarQuantityInCandy,
+                marmaladeFirstType.sugarQuantityInMarmalade, marmaladeSecondType.sugarQuantityInMarmalade,
+                chocolateFirstType.sugarQuantityInChocolate, chocolateSecondType.sugarQuantityInChocolate,
+                cookieFirstType.sugarQuantityInCookie, cookieSecondType.sugarQuantityInCookie
+                );
     }
 }
