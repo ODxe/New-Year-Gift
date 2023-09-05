@@ -1,3 +1,5 @@
+import java.util.Map;
+import java.util.HashMap;
 import java.util.Scanner;
 
 // Класс - подарок
@@ -216,6 +218,27 @@ public class NewYearGift {
         }
     }
 
+    // метод для сортировки подарка (по убыванию количества каждой сладости)
+    private void SortGiftBySweetsAmountIncrease(NewYearGift gift){
+
+        HashMap <String, Integer> sweetsAmountByType = new HashMap<String, Integer>();
+
+        // Заполнение словаря
+        sweetsAmountByType.put(gift.candyFirstTypeName, gift.candyFirstTypeQuantity);
+        sweetsAmountByType.put(gift.candySecondTypeName, gift.candySecondTypeQuantity);
+        sweetsAmountByType.put(gift.marmaladeFirstTypeName, gift.marmaladeFirstTypeQuantity);
+        sweetsAmountByType.put(gift.marmaladeSecondTypeName, gift.marmaladeSecondTypeQuantity);
+        sweetsAmountByType.put(gift.chocolateFirstTypeName, gift.chocolateFirstTypeQuantity);
+        sweetsAmountByType.put(gift.chocolateSecondTypeName, gift.chocolateSecondTypeQuantity);
+        sweetsAmountByType.put(gift.cookieFirstTypeName, gift.cookieFirstTypeQuantity);
+        sweetsAmountByType.put(gift.cookieSecondTypeName, gift.cookieSecondTypeQuantity);
+
+        sweetsAmountByType.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
+
+    }
+
     // Взаимодействие с пользователем при создании подарка
     public void CreateNewYearGift(Candy candyFirstType, Candy candySecondType, Marmalade marmaladeFirstType,
                                          Marmalade marmaladeSecondType, Chocolate chocolateFirstType,
@@ -283,5 +306,8 @@ public class NewYearGift {
                 chocolateFirstType.sugarQuantityInChocolate, chocolateSecondType.sugarQuantityInChocolate,
                 cookieFirstType.sugarQuantityInCookie, cookieSecondType.sugarQuantityInCookie
                 );
+
+        // Вызов метода сортировки
+        gift.SortGiftBySweetsAmountIncrease(gift);
     }
 }

@@ -9,7 +9,7 @@ public class SystemSweetsChoise {
         String[] candiesAssortment = new String[] {"Конфеты \"Воронежские\"", "Конфеты \"Коровка\"",
                 "Конфеты \"Барбарис\"", "Конфеты \"Огни Москвы\"", "Конфеты \"Птичье молоко\""};
         int[] candiesAssortmentWeight = new int[] {11, 15, 5, 14, 13}; //вес одной конфеты в граммах
-        int [] candiesAssortmentSugarQuantity = new int[] {10, 6, 12, 8, 10}; // количество сахара в граммах
+        int[] candiesAssortmentSugarQuantity = new int[] {10, 6, 12, 8, 10}; // количество сахара в граммах
                                                                               // в одной конфете
 
         int positionInCandiesAssortment1 = (int) (Math.random()*4);
@@ -31,7 +31,7 @@ public class SystemSweetsChoise {
         String[] marmaladeAssortment = new String[] {"Мармедад \"Кислые червячки\"", "Мармелад \"Веселые мишки\"",
                 "Мармелад \"Клубника 3D\"", "Мармелад \"Бабл Гам\"", "Мармелад \"Яркие паучки\""};
         int[] marmaladeAssortmentWeight = new int[] {3, 1, 2, 3, 1}; //вес одной мармеладки в граммах
-        int [] marmaladeAssortmentSugarQuantity = new int[] {75, 55, 100, 23, 40}; // количество сахара в граммах
+        int[] marmaladeAssortmentSugarQuantity = new int[] {75, 55, 100, 23, 40}; // количество сахара в граммах
                                                                                    // в одной мармеладке
 
         int positionInMarmaladeAssortment1 = (int) (Math.random()*4);
@@ -54,7 +54,7 @@ public class SystemSweetsChoise {
                 "Молочный шоколад с карамельной начинкой \"Milka\"", "Молочный шоколад с лесными орехами \"Alpen Gold\"",
                 "Молочный шоколад с печеньем \"Alpen Gold\""};
         int[] chocolateAssortmentWeight = new int[] {100, 85, 110, 120, 100}; //вес одной шоколадки в граммах
-        int [] chocolateAssortmentSugarQuantity = new int[] {600, 200, 150, 300, 244}; // количество сахара в граммах
+        int[] chocolateAssortmentSugarQuantity = new int[] {600, 200, 150, 300, 244}; // количество сахара в граммах
                                                                                        // в одной шоколадке
 
         int positionInChocolateAssortment1 = (int) (Math.random()*4);
@@ -78,7 +78,7 @@ public class SystemSweetsChoise {
                 "Понч с вишневой начинкой \"Bite&Go\"", "Печенье \"Milka Sticks\" с шоколадной начинкой",
                 "Печенье \"Milka Sensations\" с шоколадной крошкой"};
         int[] cookieAssortmentWeight = new int[] {140, 200, 150, 112, 312}; // вес одного печенья в граммах
-        int [] cookieAssortmentSugarQuantity = new int[] {110, 78, 82, 91, 112}; // количество сахара в граммах
+        int[] cookieAssortmentSugarQuantity = new int[] {110, 78, 82, 91, 112}; // количество сахара в граммах
                                                                                        // в одном печенье
 
         int positionInСookieAssortment1 = (int) (Math.random()*4);
