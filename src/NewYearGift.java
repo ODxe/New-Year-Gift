@@ -307,7 +307,13 @@ public class NewYearGift {
                 cookieFirstType.sugarQuantityInCookie, cookieSecondType.sugarQuantityInCookie
                 );
 
+        System.out.println("Хотите ли вы получить информацию о количестве сладостей в вашем подарке (по убыванию)? " +
+                "Введите \"Да\" или \"Нет\"");
+
         // Вызов метода сортировки
-        gift.SortGiftBySweetsAmountIncrease(gift);
+        answer = scanner.nextLine();
+        if (answer.equals("Да") || answer.equals("да")){
+            gift.SortGiftBySweetsAmountIncrease(gift);
+        }
     }
 }
